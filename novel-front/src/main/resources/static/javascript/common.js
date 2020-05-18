@@ -109,6 +109,13 @@ String.prototype.isBlank = function () {
     }
     return false;
 };
+String.prototype.isPassword = function () {
+    var strTemp=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*?[#?!@$%^&*-]).{6,20}$/;
+    if(strTemp.test(this)){
+        return false;
+    }
+    return true;
+};
 String.prototype.isNickName = function () {
     var strTemp = /^[\u4E00-\u9FA5A-Za-z0-9_]+$/;
     if (strTemp.test(this)) {
