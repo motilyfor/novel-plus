@@ -103,6 +103,10 @@
             $("#LabErr").html("密码不能为空！");
             return;
         }
+        if(password.isPassword()){
+            $("#LabErr").html("密码格式不正确！");
+            return;
+        }
         var velCode = $("#TxtChkCode").val();
         if (velCode.isBlank()) {
             $("#LabErr").html("验证码不能为空！");
